@@ -15,9 +15,9 @@ export default function Login() {
     const handleSubmit = async (e) => {
         console.log("Entered")
         e.preventDefault();
-        console.log(process.envVITE_BASE_URL)
+        console.log(process.env.VITE_BASE_URL)
         try {
-            const url = `${process.envVITE_BASE_URL}/login`;
+            const url = `${process.env.VITE_BASE_URL}/login`;
             console.log(url)
             const { data: res } = await axios.post(url, data);
             localStorage.setItem('token', res.data);

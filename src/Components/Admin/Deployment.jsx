@@ -38,7 +38,7 @@ export default function Deployment() {
             };
 
             try {
-                const url = `${process.envVITE_BASE_URL}/transactions`
+                const url = `${process.env.VITE_BASE_URL}/transactions`
                 await axios.post(url, transactionData);
                 console.log('Transaction saved successfully');
             } catch (error) {

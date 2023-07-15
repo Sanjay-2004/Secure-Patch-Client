@@ -21,7 +21,7 @@ export default function Profile() {
     const fetchProfile = async () => {
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.get(`${process.envVITE_BASE_URL}/employees`, {
+            const response = await axios.get(`${process.env.VITE_BASE_URL}/employees`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -42,7 +42,7 @@ export default function Profile() {
             }
 
             const response = await axios.put(
-                `${process.envVITE_BASE_URL}/employees`,
+                `${process.env.VITE_BASE_URL}/employees`,
                 {
                     password,
                     newPassword,
