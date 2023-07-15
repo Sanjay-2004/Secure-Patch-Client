@@ -11,7 +11,7 @@ export default function Adminnav() {
         try {
             const token = localStorage.getItem('token');
             console.log(token);
-            const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/verification`, {
+            const response = await axios.get(`${process.envVITE_BASE_URL}/verification`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

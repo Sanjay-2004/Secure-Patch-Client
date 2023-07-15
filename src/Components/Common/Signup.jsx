@@ -22,7 +22,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = `${import.meta.env.VITE_BASE_URL}/signup`;
+            const url = `${process.envVITE_BASE_URL}/signup`;
             const { data: res } = await axios.post(url, data);
             navigate('/login');
             console.log(res.message);
