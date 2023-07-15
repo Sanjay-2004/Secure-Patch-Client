@@ -1,0 +1,50 @@
+nav {
+  color: #fff;
+}
+
+#bug-description,
+#feature-description,
+#patch-description {
+  height: 150px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-detail {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.profile-key {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.profile-value {
+  flex-grow: 1;
+}
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.not-found-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.not-found-text {
+  font-size: 1.5rem;
+  color: #777;
+}
