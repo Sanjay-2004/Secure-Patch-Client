@@ -47,7 +47,7 @@ export default function Verification() {
       else
         transactionData.transactionDone = "Patch Rejected"
       try {
-        const url = `${process.env.VITE_BASE_URL}/transactions`
+        const url = `${import.meta.env.VITE_BASE_URL}/transactions`
         await axios.post(url, transactionData);
         console.log('Transaction saved successfully');
       } catch (error) {

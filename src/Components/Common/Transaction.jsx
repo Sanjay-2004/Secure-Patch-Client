@@ -12,7 +12,7 @@ export default function Transaction() {
     const transactionHistory = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get(`${process.env.VITE_BASE_URL}/transactions`, {
+            const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/transactions`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }

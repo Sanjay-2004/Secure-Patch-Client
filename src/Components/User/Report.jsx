@@ -10,7 +10,7 @@ export default function Report() {
     const bugData = { token, bugDescription };
 
     try {
-      const response = await axios.post(`${process.env.VITE_BASE_URL}/bugs`, bugData);
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/bugs`, bugData);
 
       if (response.data.status) {
         const k = document.getElementById('submitted');

@@ -65,7 +65,7 @@ export default function Register() {
         }
         try {
             console.log("sending to backend")
-            const url = `${process.env.VITE_BASE_URL}/employees`;
+            const url = `${import.meta.env.VITE_BASE_URL}/employees`;
             const res = await axios.post(url, data);
             console.log(res);
             setData(initialState);
@@ -85,7 +85,7 @@ export default function Register() {
                 token: localStorage.getItem('token'),
                 transactionDone: "New Employee Registration"
             };
-            const url = `${process.env.VITE_BASE_URL}/transactions`
+            const url = `${import.meta.env.VITE_BASE_URL}/transactions`
             await axios.post(url, transactionData);
             console.log('Transaction saved successfully');
         } catch (error) {

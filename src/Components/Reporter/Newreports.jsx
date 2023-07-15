@@ -69,7 +69,7 @@ export default function Newreports() {
             };
 
             try {
-                const url = `${process.env.VITE_BASE_URL}/transactions`
+                const url = `${import.meta.env.VITE_BASE_URL}/transactions`
                 await axios.post(url, transactionData);
                 console.log('Transaction saved successfully');
             } catch (error) {

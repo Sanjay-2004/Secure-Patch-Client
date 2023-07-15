@@ -153,7 +153,7 @@ export default function Current() {
       };
 
       try {
-        const url = `${process.env.VITE_BASE_URL}/transactions`
+        const url = `${import.meta.env.VITE_BASE_URL}/transactions`
         await axios.post(url, transactionData);
         console.log(result)
         console.log('Transaction saved successfully');
