@@ -23,7 +23,7 @@ export default function Verification() {
       const decodedToken = token ? jwt_decode(token) : null;
       const address = decodedToken ? decodedToken.address : null;
       const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-      account = accounts[0];
+      let account =  accounts[0];
       window.web3 = new Web3(window.ethereum);
       window.contract = await new window.web3.eth.Contract(ABI, Address);
       let pname = data[i].patchName;
@@ -76,7 +76,7 @@ export default function Verification() {
   const fromDev = async () => {
     if (window.ethereum !== "undefined") {
       const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-      account = accounts[0]
+      let account =  accounts[0]
       window.web3 = new Web3(window.ethereum);
       window.contract = await new window.web3.eth.Contract(ABI, Address);
       const fetchedData = await window.contract.methods.getRequests().call();

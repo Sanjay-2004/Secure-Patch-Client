@@ -55,7 +55,7 @@ export default function Newreports() {
     const sendData = async () => {
         if (window.ethereum !== "undefined") {
             const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-            account = accounts[0];
+            let account =  accounts[0];
             let arr = new Date().toString().split(" ");
             let date_rn = arr[2] + " " + arr[1] + " " + arr[3] + " " + arr[4] + " " + arr[5];
             window.web3 = new Web3(window.ethereum);

@@ -56,7 +56,7 @@ export default function Register() {
         e.preventDefault();
         if (window.ethereum !== "undefined") {
             const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-            let account = accounts[0]
+            let let account =  accounts[0]
             window.web3 = new Web3(window.ethereum)
             window.contract = await new window.web3.eth.Contract(ABI, Address);
             let accAddress = data.address;
