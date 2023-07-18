@@ -93,8 +93,6 @@ export default function Adminnav() {
                                             </NavLink>
                                         </li>
                                         <li>
-                                        </li>
-                                        <li>
                                             <hr className="dropdown-divider" />
                                         </li>
                                         <li>

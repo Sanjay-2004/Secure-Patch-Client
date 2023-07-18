@@ -1,24 +1,40 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import Swal from 'sweetalert2';
 
 export default function Report() {
   const [bugDescription, setBugDescription] = useState('');
 
   const submitBug = async () => {
-    const token = localStorage.getItem('token');
-    const bugData = { token, bugDescription };
+    if (bugDescription.length > 0) {
+      const token = localStorage.getItem('token');
+      const bugData = { token, bugDescription };
 
-    try {
-      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/bugs`, bugData);
+      try {
+        const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/bugs`, bugData);
 
-      if (response.data.status) {
-        const k = document.getElementById('submitted');
-        k.innerHTML = `BUG SENT SUCCESSFULLY<br>THANK YOU`;
-        setBugDescription('');
+        if (response.data.status) {
+          setBugDescription('');
+        }
+        Swal.fire(
+          'Bug Reported',
+          'Thank you for reporting!',
+          'success'
+        )
+      } catch (error) {
+        console.error('Error submitting bug:', error);
       }
-    } catch (error) {
-      console.error('Error submitting bug:', error);
+    } else {
+      let timerInterval
+      Swal.fire({
+        title: 'Empty Bug',
+        html: 'Please enter a bug',
+        timer: 2000,
+        timerProgressBar: true,
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      })
     }
   };
 

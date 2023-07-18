@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Web3 from 'web3';
 import { ABI, Address } from '../Common/Solidity'
-
+import jwt_decode from 'jwt-decode';
 
 export default function Register() {
     const initialState = {
