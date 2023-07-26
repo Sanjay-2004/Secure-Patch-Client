@@ -152,16 +152,20 @@ export default function Current() {
         transactionDone: "New Patch Requested"
       };
 
-      try {
-        const url = `${import.meta.env.VITE_BASE_URL}/transactions`
-        await axios.post(url, transactionData);
-        console.log(result)
-        console.log('Transaction saved successfully');
-      } catch (error) {
-        console.log('Error saving transaction:', error);
-      }
-      document.getElementById("sent_req").innerHTML = "SENT SUCCESSFULLY"
+      await backendUpload(result, transactionData);
     }
+  }
+
+  const backendUpload = async (result, transactionData) => {
+    try {
+      const url = `${import.meta.env.VITE_BASE_URL}/transactions`
+      await axios.post(url, transactionData);
+      console.log(result)
+      console.log('Transaction saved successfully');
+    } catch (error) {
+      console.log('Error saving transaction:', error);
+    }
+    document.getElementById("sent_req").innerHTML = "SENT SUCCESSFULLY"
   }
 
   return (
